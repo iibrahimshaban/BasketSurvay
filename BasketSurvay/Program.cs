@@ -1,15 +1,9 @@
-using BasketSurvay.Services;
-using Scalar.AspNetCore;
+using BasketSurvay;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
-
-builder.Services.AddControllers();
-// Learn more about configuring OpenAPI at https://aka.ms/aspnet/openapi
-builder.Services.AddOpenApi();
-
-builder.Services.AddScoped<IPollServices,PollServices>();
+// add all services to container 
+builder.Services.AddDependacies();
 
 var app = builder.Build();
 
@@ -17,8 +11,8 @@ var app = builder.Build();
 if (app.Environment.IsDevelopment())
 {
     app.MapOpenApi();
-    //app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json","v1"));
-    app.MapScalarApiReference();
+    app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json","v1"));
+    //app.MapScalarApiReference();
 }
 
 app.UseHttpsRedirection();

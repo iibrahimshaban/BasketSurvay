@@ -25,8 +25,9 @@ namespace BasketSurvay.Services
             _polls.Add(Newpoll);
             return Newpoll;
         }
-        public bool Update(Poll Newpoll) 
+        public bool Update(int id,Poll Newpoll) 
         {
+            Newpoll.Id = id;
             var MyPoll = _polls.FirstOrDefault(P => P.Id == Newpoll.Id);
             if (MyPoll != null)
             {
