@@ -1,8 +1,12 @@
-﻿global using BasketSurvay.Models;
+﻿global using BasketSurvay.Entities;
 global using BasketSurvay.Services;
 global using Microsoft.AspNetCore.Mvc;
-global using BasketSurvay.Contracts.Requestes;
-global using BasketSurvay.Contracts.Responses;
+global using BasketSurvay.Contracts.Authentication;
+global using BasketSurvay.Contracts.Polls;
 global using Mapster;
 global using System.ComponentModel.DataAnnotations;
 global using FluentValidation;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using BasketSurvay.Persistence;
+global using Microsoft.Extensions.Options;

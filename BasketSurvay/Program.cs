@@ -3,7 +3,9 @@ using BasketSurvay;
 var builder = WebApplication.CreateBuilder(args);
 
 // add all services to container 
-builder.Services.AddDependacies();
+builder.Services.AddDependacies(builder.Configuration);
+
+var configurations = builder.Configuration["ConnectionStrings"];
 
 var app = builder.Build();
 
@@ -18,6 +20,7 @@ if (app.Environment.IsDevelopment())
 app.UseHttpsRedirection();
 
 app.UseAuthorization();
+
 
 app.MapControllers();
 
