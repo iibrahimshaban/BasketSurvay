@@ -3,7 +3,7 @@
     [AttributeUsage(AttributeTargets.Field | AttributeTargets.Property)]
     public class MinAgeAttribute(int MinimumAge) : ValidationAttribute
     {
-        private readonly int _minimumAge= MinimumAge;
+        private readonly int _minimumAge = MinimumAge;
 
         protected override ValidationResult? IsValid(object? value, ValidationContext validationContext)
         {

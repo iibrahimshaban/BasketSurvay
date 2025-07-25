@@ -1,8 +1,6 @@
-﻿using BasketSurvay.Contracts.Polls;
-
-namespace BasketSurvay.Entities
+﻿namespace BasketSurvay.Entities
 {
-    public class Poll
+    public class Poll : AuditableEntity
     {
         public int Id { get; set; }
         public string Title { get; set; } = string.Empty;
@@ -10,6 +8,8 @@ namespace BasketSurvay.Entities
         public bool IsPublished { get; set; }
         public DateOnly StartsAt { get; set; }
         public DateOnly EndsAt { get; set; }
+        public ICollection<Question> Questions { get; set; } = [];
+        public ICollection<Vote> Votes { get; set; } = [];
     }
-    
+
 }

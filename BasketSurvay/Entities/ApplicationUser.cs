@@ -1,12 +1,17 @@
-﻿using Microsoft.AspNetCore.Identity;
-
-namespace BasketSurvay.Entities
+﻿namespace BasketSurvay.Entities
 {
     public sealed class ApplicationUser : IdentityUser
     {
-        public string FirstName { get; set; } =string.Empty;
-        public string LastName { get; set; } =string.Empty;
+        public ApplicationUser()
+        {
+            Id = Guid.CreateVersion7().ToString();
+            SecurityStamp = Guid.CreateVersion7().ToString();
+        }
+        public string FirstName { get; set; } = string.Empty;
+        public string LastName { get; set; } = string.Empty;
+        public bool IsDisabled { get; set; }
         public List<RefreshToken> RefreshTokens { get; set; } = [];
-           
+        public ICollection<Vote> Votes { get; set; } = [];
+
     }
 }

@@ -1,6 +1,4 @@
-﻿using System.Reflection.Metadata.Ecma335;
-
-namespace BasketSurvay.Contracts.Polls
+﻿namespace BasketSurvay.Contracts.Polls
 {
     public class CreatePollRequestValidator : AbstractValidator<CreatePollRequest>
     {

@@ -2,7 +2,7 @@
 {
     public class LoginRequestValidator : AbstractValidator<LoginRequest>
     {
-        public LoginRequestValidator() 
+        public LoginRequestValidator()
         {
             // Email validation
             RuleFor(x => x.Email)
